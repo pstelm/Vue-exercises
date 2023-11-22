@@ -8,7 +8,12 @@
     </div>
     <div class="info">
       <p>This counter is: {{ counterStore.oddOrEven }}</p>
-      <p>2nd version - This counter is {{ counterStore.oddOrEven2 }}</p>
+      <!-- <p>2nd version - This counter is {{ counterStore.oddOrEven2 }}</p> -->
+    </div>
+    <div class="line"></div>
+    <div class="info">
+      <h3>Edit counter:</h3>
+      <input v-model="counterStore.counter" type="number" class="input" />
     </div>
   </div>
 </template>
@@ -20,6 +25,13 @@ const counterStore = useCounterStore()
 </script>
 
 <style>
+.line {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 10px;
+  background-color: var(--color-border);
+}
+
 .home {
   width: 100%;
   display: flex;
@@ -38,6 +50,7 @@ const counterStore = useCounterStore()
   font-size: 30px;
   background-color: var(--vt-c-white-soft);
   border: none;
+  border-radius: 3px;
   cursor: pointer;
 }
 
@@ -46,6 +59,24 @@ const counterStore = useCounterStore()
 }
 
 .info {
+  margin-bottom: 20px;
   text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.input {
+  padding: 5px;
+  font-size: 20px;
+  border: 3px solid white;
+  border-radius: 3px;
+}
+
+.input:focus {
+  outline: none;
+  border: 3px solid hsla(160, 100%, 37%, 1);
 }
 </style>
