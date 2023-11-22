@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <div class="count">{{ counterStore.counter }}</div>
+    <Counter />
     <div class="buttons">
       <button @click="counterStore.decreaseCounter">-</button>
       <button @click="counterStore.increaseCounter">+</button>
@@ -19,6 +19,7 @@
 </template>
 
 <script setup>
+import Counter from '@/components/Counter.vue'
 import { useCounterStore } from '../stores/counter'
 
 const counterStore = useCounterStore()
@@ -37,11 +38,6 @@ const counterStore = useCounterStore()
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.count {
-  font-size: 50px;
-  color: hsla(160, 100%, 37%, 1);
 }
 
 .buttons button {
